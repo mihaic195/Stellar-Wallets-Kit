@@ -6,6 +6,7 @@ import { RabetModule } from "./rabet.module.ts";
 import { xBullModule } from "./xbull.module.ts";
 import { HanaModule } from "./hana.module.ts";
 import { KleverModule } from "./klever.module.ts";
+import { OneKeyModule } from "./onekey.module.ts";
 
 /**
  * This method returns all modules that don't require extra configuration before they can be loaded
@@ -14,7 +15,9 @@ import { KleverModule } from "./klever.module.ts";
  * Note: If you are the creator of a module and you want the module to be listed here, the module must not require any extra configuration nor polyfills (everything should be include already in your module's dependencies).
  * If your module requires some extra polyfill or configuration then the user of the kit needs to include it manually.
  */
-export function defaultModules(opts?: { filterBy: (module: ModuleInterface) => boolean }): ModuleInterface[] {
+export function defaultModules(opts?: {
+  filterBy: (module: ModuleInterface) => boolean;
+}): ModuleInterface[] {
   const modules: ModuleInterface[] = [
     new AlbedoModule(),
     new FreighterModule(),
@@ -23,6 +26,7 @@ export function defaultModules(opts?: { filterBy: (module: ModuleInterface) => b
     new LobstrModule(),
     new HanaModule(),
     new KleverModule(),
+    new OneKeyModule(),
   ];
   return opts?.filterBy ? modules.filter(opts.filterBy) : modules;
 }
