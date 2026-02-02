@@ -91,6 +91,10 @@ export class StellarWalletsKit {
 
   // ---------------------------------------------- Wallet Interaction ----------------------------------------------
 
+  /**
+   * This method will get you the `address` that's currently active in the Kit's memory. Such address is fetched when the user connects its wallet
+   * NOTE: If you want to fetch the address directly from the wallet, use the `fetchAddress` method instead.
+   */
   static async getAddress(): Promise<{ address: string }> {
     if (!activeAddress.value) {
       throw {
