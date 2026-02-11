@@ -65,5 +65,5 @@ export function MultiPageAnimator({ currentRoute, pages, duration = 300 }: Multi
     `
   );
 
-  return html`<div style=${{ overflow: 'scroll', position: 'relative', width: '100%', height: '100%' }}>${entries}</div>`;
+  return html`<div style=${{ position: 'relative', width: '100%', height: '100%' }}>${entries}</div>`;
 }

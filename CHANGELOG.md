@@ -3,7 +3,7 @@
 All notable changes to this project will be documented in this file.
 See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
-### 2.0.0 (Not yet deployed)
+### 2.0.0 (2026-02-11)
 
 ### Changes
 
