@@ -5,7 +5,6 @@ await emptyDir("./dist");
 
 await build({
   esModule: true,
-  scriptModule: false,
   packageManager: "pnpm",
   entryPoints: [
     "./mod.ts",
@@ -79,7 +78,7 @@ await build({
     deno: false,
   },
   package: {
-    name: denoFile.name,
+    name: denoFile.name.replace("@creit-tech", "@creit.tech"),
     version: denoFile.version,
     description: "A kit to handle all Stellar Wallets at once",
     author: {
@@ -100,6 +99,10 @@ await build({
       "xBull Wallet",
       "Rabet",
       "Freighter",
+      "Wallet Connect",
+      "Hana",
+      "Ledger",
+      "Trezor",
     ],
   },
 });

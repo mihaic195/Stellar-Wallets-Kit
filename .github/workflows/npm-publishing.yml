@@ -1,0 +1,28 @@
+name: Publish Package to npm
+on:
+  workflow_dispatch:
+
+  release:
+    types:
+      - published
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '20.11.0'
+          registry-url: 'https://registry.npmjs.org'
+
+      - run: npm -g i deno pnpm
+
+      - run: deno task build-npm
+        working-directory: src
+
+      - run: npm publish
+        working-directory: src/dist
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
